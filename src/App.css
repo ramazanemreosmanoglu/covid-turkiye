@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+
+.cases {
+  border: 1px solid #4e4a0c;
+}
+
+.deaths {
+  border: 1px solid rgb(109, 19, 19);
+}
+
+.recovered {
+  border: 1px solid rgb(27, 77, 12);
+}
+
+.brand {
+  text-align: center;
+}
+
+
