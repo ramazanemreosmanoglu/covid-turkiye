@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import {
@@ -9,43 +8,51 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import Number from "./components/Number.jsx";
+import axios from "axios";
 
 class App extends React.Component {
-  state = {
-    cases: 0,
-    deaths: 0,
-    recovered: 0,
-  };
+  state = {};
+  componentDidMount() {
+    axios.get("https://covid19-api.org/api/status/TR")
+      .then(res => {
+        this.setState(res.data);
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
-        <Navbar bg="primary">
-          <Navbar.Brand href="/" className="brand">Covid Turkiye</Navbar.Brand>
-        </Navbar>
+        <div className="main">
 
-        <Row>
-          <Col>
-            <Card className="cases">
-              <Card.Header>Vaka</Card.Header>
-            </Card>
-          </Col>
+          <Row>
+            <Col>
+              <Card className="cases">
+                <Card.Header>Vaka</Card.Header>
+                <Number number={this.state.cases} color="yellow"/>
+              </Card>
+            </Col>
 
-          <Col>
-            <Card className="deaths">
-              <Card.Header>Vaka</Card.Header>
-            </Card>
-          </Col>
+            <Col>
+              <Card className="deaths">
+                <Card.Header>Olum</Card.Header>
+                <Number number={this.state.deaths} color="red"/>
+              </Card>
+            </Col>
 
-          <Col>
-            <Card className="recovered">
-              <Card.Header>Vaka</Card.Header>
-            </Card>
-          </Col>
-        </Row>
+            <Col>
+              <Card className="recovered">
+                <Card.Header>Kurtarilan</Card.Header>
+                <Number number={this.state.recovered} color="green"/>
+              </Card>
+            </Col>
+          </Row>
+        </div>
 
-        <Container>
-
-        </Container>
+        <div className="end_texts">
+          <p>Ramazan Emre Osmanoglu</p>
+          <p>Kaynak: <a href="https://covid19-api.org/api/status/UA">https://covid19-api.org/api/status/UA</a></p>
+        </div>
       </React.Fragment>
     )
   }
