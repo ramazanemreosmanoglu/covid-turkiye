@@ -3,19 +3,34 @@ body {
 }
 
 .cases {
-  border: 1px solid #4e4a0c;
+  border: 2px solid #ffef15;
 }
 
 .deaths {
-  border: 1px solid rgb(109, 19, 19);
+  border: 2px solid rgb(228, 21, 21);
 }
 
 .recovered {
-  border: 1px solid rgb(27, 77, 12);
+  border: 2px solid rgb(57, 189, 17);
 }
 
 .brand {
-  text-align: center;
+  text-align: center !important;
+  color: white !important;
 }
 
+.main {
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.end_texts {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+}
