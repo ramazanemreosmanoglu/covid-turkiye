@@ -51,7 +51,7 @@ class App extends React.Component {
 
         <div className="end_texts">
           <p>Ramazan Emre Osmanoglu</p>
-          <p>Kaynak: <a href="https://covid19-api.org/api/status/UA">https://covid19-api.org/api/status/UA</a></p>
+          <p>Kaynak: <a href="https://covid19-api.org/">https://covid19-api.org/</a></p>
         </div>
       </React.Fragment>
     )
